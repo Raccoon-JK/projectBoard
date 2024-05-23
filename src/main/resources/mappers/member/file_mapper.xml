@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- <mapper namespace="com.example.demo.mapper.FileMapper">
+    <insert id="insertFiles">
+        <foreach collection="fileDTOList" item="file">
+            INSERT INTO UPLOADFILE (UPLOADFILE_NO, BOARD_NO, FILE_NAME, CHANGE_NAME)
+            VALUES (SEQ_UPLOADFILE_NO.NEXTVAL, #{file.boardNo}, #{file.fileName}, #{file.changeName})
+        </foreach>
+    </insert>
+</mapper> -->
+<mapper namespace="com.example.demo.board.mapper.FileMapper">
+
+	<!-- 파일 업로드 -->
+    <insert id="insertFiles">
+    	INSERT INTO UPLOADFILE(UPLOADFILE_NO, BOARD_NO, FILE_NAME, CHANGE_NAME)
+    	SELECT SEQ_UPLOADFILE_NO.NEXTVAL, A.*
+    	FROM(
+        <foreach collection="fileDTOList" item="file" separator="UNION ALL ">
+            SELECT #{file.boardNo} AS BOARD_NO, #{file.fileName} AS FILE_NAME, #{file.changeName} AS CHANGE_NAME FROM DUAL
+        </foreach>
+        ) A
+    </insert>
+    
+    <!-- 파일 조회 -->
+    <select id="boardFile" resultType="FileDTO">
+    	SELECT UPLOADFILE_NO, BOARD_NO, FILE_NAME, CHANGE_NAME
+    	FROM UPLOADFILE
+    	WHERE BOARD_NO = #{boardNo}
+    </select>
+    
+    <!-- 게시글 수정 시 파일 삭제 -->
+    <delete id="deleteFile">
+        DELETE FROM UPLOADFILE
+        WHERE UPLOADFILE_NO = #{fileNo}
+    </delete>
+    
+    <!-- 파일 수정 이름 가져오기 -->
+    <select id="getChangeName" parameterType="int" resultType="String">
+        SELECT CHANGE_NAME
+        FROM UPLOADFILE
+        WHERE UPLOADFILE_NO = #{fileNo}
+    </select>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</mapper>
