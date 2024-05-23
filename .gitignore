@@ -31,6 +31,10 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Ignore metadata folder
+.metadata/
+
 <<<<<<< HEAD
 =======
 
