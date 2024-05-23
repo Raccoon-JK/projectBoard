@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+.fileName {
+	display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.file-item {
+	display: flex;
+	align-items: center;
+}
+
+.delete-btn {
+	cursor: pointer;
+	color: red;
+	margin-left: 10px;
+}

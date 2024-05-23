@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL"/>
+		<setting name="mapUnderscoreToCamelCase" value="true"/>		
+		<setting name="callSettersOnNulls" value="true"/>
+ 	</settings>
+ 	
+<!--  	<typeAliases> -->
+<!-- 		<typeAlias type="com.example.demo.member.mapper.MemberMapper" alias="MemberMapper"/> -->
+<!-- 		<typeAlias type="com.example.demo.member.dto.MemberDTO" alias="MemberDTO"/> -->
+		
+<!-- 	</typeAliases> -->
+	
+<!-- 	<mappers> -->
+<!-- 		<mapper resource="mappers/member-mapper.xml"></mapper> -->
+<!-- 		<mapper resource="mappers/board-mapper.xml"></mapper> -->
+<!-- 		<mapper resource="mappers/comments-mapper.xml"></mapper> -->
+<!-- 		<mapper resource="mappers/file_mapper.xml"></mapper> -->
+<!-- 	</mappers> -->
+	
+	
+</configuration>
+

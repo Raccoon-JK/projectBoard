@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+.pageInfo{
+    list-style : none;
+    display: flex;
+    justify-content: center;
+    padding:15px;        
+}
+
+.pageInfo_btn a{
+    padding: 5px;
+    border: 1px solid #d1d3e2;  
+} 
+
+a:hover {
+	color:black; text-decoration: underline;
+}
+
+.activePage{
+      background-color: #cdd5ec;
+}
