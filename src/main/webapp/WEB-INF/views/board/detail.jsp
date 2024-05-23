@@ -95,7 +95,7 @@
                  <div id="fileName" class="fileName">
                  	
                  	<c:forEach var="file" items="${fileList}">
-                    	<a href="/board/board_file/${file.changeName}">${file.fileName}</a>
+                    	<a href="/board_file/${file.changeName}">${file.fileName}</a>
                  	</c:forEach>
                  
                  </div>
